@@ -1,0 +1,17 @@
+server:
+  port: 8080
+  context-path: /api
+logging:
+  level:
+    root: warn
+    com.lrm: debug
+  file:
+    name: my.log
+    path: logs
+
+book:
+  name: 互联网世界观
+  isbn: ${random.uuid}
+  author: 李善友
+  description: ${book.name} ,这本书还不错
+
