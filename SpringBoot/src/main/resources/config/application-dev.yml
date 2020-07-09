@@ -1,0 +1,25 @@
+#三个配置文件: 一个控制，一个环境，一个生产环境
+
+server:
+  port: 8080
+#  context-path: /api
+
+
+logging:
+  level:
+    root: info
+    com.lrm: debug
+  file:
+    path: /logs
+    name: debug.log
+
+Spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/book?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+    password: 97January26th.
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

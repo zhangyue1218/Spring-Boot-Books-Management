@@ -1,13 +1,8 @@
-server:
-  port: 8080
-  context-path: /api
-logging:
-  level:
-    root: warn
-    com.lrm: debug
-  file:
-    name: my.log
-    path: logs
+#三个配置文件: 一个控制，一个开发环境，一个生产环境
+
+Spring:
+  profiles:
+    active: dev
 
 book:
   name: 互联网世界观

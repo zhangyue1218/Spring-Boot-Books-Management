@@ -1,7 +1,7 @@
 package com.luna.demo.web;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Controller;
+import com.luna.demo.domain.Book;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -12,17 +12,11 @@ import java.util.Map;
 //@Controller
 @RestController
 
-@RequestMapping("/v1")
+@RequestMapping("/v2")
 public class HelloController {
 
-    @Value("${book.name}")
-    private String name;
-    @Value("${book.isbn}")
-    private String isbn;
-    @Value("${book.author}")
-    private String author;
-    @Value("${book.description}")
-    private String description;
+//    @Autowired
+//    private Book book;
 
     @PostMapping("/say")
     public String Hello(){
@@ -33,9 +27,9 @@ public class HelloController {
 //    @ResponseBody
     public Object getAll(@RequestParam("page") Integer page, @RequestParam(value = "size",defaultValue = "10") Integer size){
         Map<String, Object> book = new HashMap<>();
-        book.put("name", name);
-        book.put("isbn", isbn);
-        book.put("author", author);
+        book.put("name", "互联网世界观");
+        book.put("isbn", "9877234623432");
+        book.put("author", "李善友");
         Map<String, Object> book2 = new HashMap<>();
         book2.put("name", "程序员的思维修炼");
         book2.put("isbn", "12312312");
@@ -60,15 +54,8 @@ public class HelloController {
      */
     @GetMapping("/books/{id}/{username}")
     public Object getOne(@PathVariable long id, @PathVariable String username) {
-        Map<String, Object> book = new HashMap<>();
         System.out.println("id:"+ id + "username:" + username);
-        book.put("name", name);
-        book.put("isbn", isbn);
-        book.put("author", author);
-        book.put("description", description);
-        book.put("username", username);
-
-        return book;
+        return null;
     }
 
     @PostMapping("/books")

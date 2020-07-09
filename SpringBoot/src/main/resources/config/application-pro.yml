@@ -1,0 +1,12 @@
+#三个配置文件: 一个控制，一个环境，一个开发
+
+server:
+  port: 8081
+#  context-path: /api
+logging:
+  level:
+    root: warn
+    com.lrm: debug
+  file:
+    path: /logs
+    name: pro.log
