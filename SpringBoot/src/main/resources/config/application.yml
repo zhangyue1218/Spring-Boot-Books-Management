@@ -3,6 +3,11 @@
 Spring:
   profiles:
     active: dev
+  thymeleaf:
+    mode: HTML
+    cache: false
+    check-template: true
+    check-template-location: true
 
 book:
   name: 互联网世界观

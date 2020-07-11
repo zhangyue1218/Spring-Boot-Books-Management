@@ -35,8 +35,8 @@ public class BookService {
      * @param id
      * @return
      */
-    public Optional<Book> findOne(long id) {
-        return bookRepository.findById(id);
+    public Book findOne(long id) {
+        return bookRepository.getOne(id);
     }
 
     /**

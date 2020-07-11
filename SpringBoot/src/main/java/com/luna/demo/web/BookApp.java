@@ -44,7 +44,7 @@ public class BookApp {
      * @return
      */
     @GetMapping("/books/{id}")
-    public Optional<Book> getOne(@PathVariable long id){
+    public Book getOne(@PathVariable long id){
         return bookService.findOne(id);
     }
 
