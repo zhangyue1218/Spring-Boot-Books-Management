@@ -4,6 +4,7 @@
 
 * frontend: Bootstrap4 + HTML + CSS
 * backend: SpringBoot + MySql
+* dependencies:thymeleaf3,JPA
 
 ## Functions
 * 使用 Java, Spring Boot, Hibernate 实现了一个书单管理系统的 RESTful 网络应用。
