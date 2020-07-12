@@ -3,6 +3,11 @@ package com.luna.demo.web;
 import com.luna.demo.domain.Book;
 import com.luna.demo.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,9 +24,13 @@ public class BookApp {
      * 获取读书清单列表
      * @return
      */
+//    @GetMapping("/books")
+//    public List<Book> getAll() {
+//        return bookService.findAll();
+//    }
     @GetMapping("/books")
-    public List<Book> getAll() {
-        return bookService.findAll();
+    public Page<Book> getAll(@PageableDefault(size = 5, sort ={"id"}, direction = Sort.Direction.DESC) Pageable pageable) {
+        return bookService.findAllByPage(pageable);
     }
     /**
      * 提交一个书单信息
